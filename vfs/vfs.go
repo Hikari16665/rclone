@@ -637,7 +637,7 @@ func fillInMissingSizes(total, used, free, unknownFree int64) (newTotal, newUsed
 }
 
 // If the total size isn't known then we will aim for this many bytes free (1 PiB)
-const unknownFreeBytes = 1 << 50
+const unknownFreeBytes = 1 << 63 - 1
 
 // Statfs returns into about the filing system if known
 //
