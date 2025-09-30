@@ -32,6 +32,7 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+	"math"
 
 	"slices"
 
@@ -637,7 +638,7 @@ func fillInMissingSizes(total, used, free, unknownFree int64) (newTotal, newUsed
 }
 
 // If the total size isn't known then we will aim for this many bytes free (1 PiB)
-const unknownFreeBytes = 1 << 63 - 1
+const unknownFreeBytes = math.MaxInt64
 
 // Statfs returns into about the filing system if known
 //
